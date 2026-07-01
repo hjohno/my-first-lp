@@ -18,6 +18,7 @@
       <li><a href="#hero" class="nav__link">Home</a></li>
       <li><a href="#menu" class="nav__link">Menu</a></li>
       <li><a href="#access" class="nav__link">Access</a></li>
+      <li><a href="#contact" class="nav__link">Contact</a></li>
     </ul>
     <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く">
       <span></span><span></span><span></span>
@@ -239,6 +240,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-header__label">Contact</p>
+        <h2 class="section-header__title">お問い合わせ</h2>
+        <p class="section-header__desc">ご予約・ご質問など、お気軽にお問い合わせください。</p>
+      </div>
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="contact-form__group">
+          <label class="contact-form__label" for="contactName">お名前 <span class="contact-form__required">*</span></label>
+          <input
+            class="contact-form__input"
+            type="text"
+            id="contactName"
+            name="name"
+            placeholder="山田 太郎"
+            autocomplete="name"
+          >
+          <p class="contact-form__error" id="nameError"></p>
+        </div>
+        <div class="contact-form__group">
+          <label class="contact-form__label" for="contactEmail">メールアドレス <span class="contact-form__required">*</span></label>
+          <input
+            class="contact-form__input"
+            type="email"
+            id="contactEmail"
+            name="email"
+            placeholder="example@email.com"
+            autocomplete="email"
+          >
+          <p class="contact-form__error" id="emailError"></p>
+        </div>
+        <div class="contact-form__group">
+          <label class="contact-form__label" for="contactMessage">お問い合わせ内容 <span class="contact-form__required">*</span></label>
+          <textarea
+            class="contact-form__textarea"
+            id="contactMessage"
+            name="message"
+            rows="6"
+            placeholder="ご質問やご要望をご記入ください"
+          ></textarea>
+          <p class="contact-form__error" id="messageError"></p>
+        </div>
+        <div class="contact-form__footer">
+          <button type="submit" class="contact-form__submit">送信する</button>
+        </div>
+      </form>
     </div>
   </section>
 

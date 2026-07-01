@@ -125,6 +125,65 @@ tabs.forEach(tab => {
   });
 });
 
+// ── Contact form validation ───────────────────────────────────────
+const contactForm = document.getElementById('contactForm');
+
+const validators = {
+  name: {
+    field: () => document.getElementById('contactName'),
+    error: () => document.getElementById('nameError'),
+    validate(val) {
+      if (!val) return 'お名前を入力してください。';
+      return '';
+    },
+  },
+  email: {
+    field: () => document.getElementById('contactEmail'),
+    error: () => document.getElementById('emailError'),
+    validate(val) {
+      if (!val) return 'メールアドレスを入力してください。';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) return '正しいメールアドレスの形式で入力してください。';
+      return '';
+    },
+  },
+  message: {
+    field: () => document.getElementById('contactMessage'),
+    error: () => document.getElementById('messageError'),
+    validate(val) {
+      if (!val) return 'お問い合わせ内容を入力してください。';
+      return '';
+    },
+  },
+};
+
+function validateField(key) {
+  const { field, error, validate } = validators[key];
+  const msg = validate(field().value.trim());
+  error().textContent = msg;
+  field().classList.toggle('error', !!msg);
+  return !msg;
+}
+
+Object.keys(validators).forEach(key => {
+  validators[key].field().addEventListener('blur', () => validateField(key));
+  validators[key].field().addEventListener('input', () => {
+    if (validators[key].field().classList.contains('error')) validateField(key);
+  });
+});
+
+contactForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const allValid = Object.keys(validators).map(validateField).every(Boolean);
+  if (!allValid) return;
+
+  alert('送信しました。\nお問い合わせありがとうございます。近日中にご連絡いたします。');
+  contactForm.reset();
+  Object.keys(validators).forEach(key => {
+    validators[key].field().classList.remove('error');
+    validators[key].error().textContent = '';
+  });
+});
+
 // ── Scroll reveal ─────────────────────────────────────────────────
 function addRevealClass() {
   const targets = [
@@ -134,6 +193,8 @@ function addRevealClass() {
     '.access__map',
     '.access__info-block',
     '.about-strip__item',
+    '.contact-form__group',
+    '.contact-form__footer',
   ];
 
   targets.forEach((selector, i) => {
