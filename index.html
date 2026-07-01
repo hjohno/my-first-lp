@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFÉ MORI</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">CAFÉ MORI</div>
+    <ul class="nav__links">
+      <li><a href="#hero" class="nav__link">Home</a></li>
+      <li><a href="#menu" class="nav__link">Menu</a></li>
+      <li><a href="#access" class="nav__link">Access</a></li>
+    </ul>
+    <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__sub">森の静けさと、一杯のコーヒー</p>
+      <h1 class="hero__title">CAFÉ MORI</h1>
+      <p class="hero__desc">木漏れ日の中で、時間を忘れる特別なひとときを</p>
+      <a href="#menu" class="btn btn--outline">メニューを見る</a>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Strip -->
+  <section class="about-strip">
+    <div class="about-strip__inner">
+      <div class="about-strip__item">
+        <span class="about-strip__icon">&#9679;</span>
+        <span>自家焙煎スペシャルティコーヒー</span>
+      </div>
+      <div class="about-strip__item">
+        <span class="about-strip__icon">&#9679;</span>
+        <span>毎朝焼きたての自家製スイーツ</span>
+      </div>
+      <div class="about-strip__item">
+        <span class="about-strip__icon">&#9679;</span>
+        <span>森をイメージした落ち着く空間</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-header__label">Our Menu</p>
+        <h2 class="section-header__title">こだわりの一杯</h2>
+        <p class="section-header__desc">丁寧に選んだ豆を、その日の気温と湿度に合わせて焙煎しています。</p>
+      </div>
+
+      <div class="menu__tabs">
+        <button class="menu__tab active" data-tab="coffee">Coffee</button>
+        <button class="menu__tab" data-tab="food">Food</button>
+        <button class="menu__tab" data-tab="seasonal">Seasonal</button>
+      </div>
+
+      <div class="menu__grid" id="menuGrid">
+
+        <!-- Coffee items -->
+        <div class="menu-card" data-category="coffee">
+          <div class="menu-card__img-wrap">
+            <div class="menu-card__img menu-card__img--espresso"></div>
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">Espresso</h3>
+            <p class="menu-card__desc">濃厚でコクのある一杯。エチオピア産豆のフルーティな香り。</p>
+            <p class="menu-card__price">¥550</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="coffee">
+          <div class="menu-card__img-wrap">
+            <div class="menu-card__img menu-card__img--latte"></div>
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">Café Latte</h3>
+            <p class="menu-card__desc">マイルドなエスプレッソと滑らかなスチームミルクの調和。</p>
+            <p class="menu-card__price">¥680</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="coffee">
+          <div class="menu-card__img-wrap">
+            <div class="menu-card__img menu-card__img--drip"></div>
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">Pour Over</h3>
+            <p class="menu-card__desc">ハンドドリップで丁寧に。その日のシングルオリジン豆を使用。</p>
+            <p class="menu-card__price">¥750</p>
+          </div>
+        </div>
+
+        <!-- Food items -->
+        <div class="menu-card" data-category="food" style="display:none">
+          <div class="menu-card__img-wrap">
+            <div class="menu-card__img menu-card__img--croissant"></div>
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">Butter Croissant</h3>
+            <p class="menu-card__desc">毎朝5時から仕込む、サクサクのバタークロワッサン。</p>
+            <p class="menu-card__price">¥420</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="food" style="display:none">
+          <div class="menu-card__img-wrap">
+            <div class="menu-card__img menu-card__img--cake"></div>
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">Forest Cake</h3>
+            <p class="menu-card__desc">抹茶とホワイトチョコのレイヤーケーキ。季節のフルーツ添え。</p>
+            <p class="menu-card__price">¥680</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="food" style="display:none">
+          <div class="menu-card__img-wrap">
+            <div class="menu-card__img menu-card__img--sandwich"></div>
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">Morning Plate</h3>
+            <p class="menu-card__desc">地元野菜のサラダと自家製パンのモーニングセット。</p>
+            <p class="menu-card__price">¥980</p>
+          </div>
+        </div>
+
+        <!-- Seasonal items -->
+        <div class="menu-card menu-card--special" data-category="seasonal" style="display:none">
+          <div class="menu-card__badge">Limited</div>
+          <div class="menu-card__img-wrap">
+            <div class="menu-card__img menu-card__img--seasonal1"></div>
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">Summer Cold Brew</h3>
+            <p class="menu-card__desc">18時間水出しのコールドブリュー。夏限定の柑橘シロップ添え。</p>
+            <p class="menu-card__price">¥780</p>
+          </div>
+        </div>
+
+        <div class="menu-card menu-card--special" data-category="seasonal" style="display:none">
+          <div class="menu-card__badge">Limited</div>
+          <div class="menu-card__img-wrap">
+            <div class="menu-card__img menu-card__img--seasonal2"></div>
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">Mori Parfait</h3>
+            <p class="menu-card__desc">旬のベリーと自家製アイスのパフェ。見た目も森の風景。</p>
+            <p class="menu-card__price">¥1,100</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Concept Section -->
+  <section class="concept">
+    <div class="concept__left">
+      <div class="concept__photo-grid">
+        <div class="concept__photo concept__photo--1"></div>
+        <div class="concept__photo concept__photo--2"></div>
+        <div class="concept__photo concept__photo--3"></div>
+      </div>
+    </div>
+    <div class="concept__right">
+      <p class="section-header__label">Our Story</p>
+      <h2 class="concept__title">森に迷い込んだような<br>特別な空間</h2>
+      <p class="concept__text">
+        CAFÉ MORIは、日常の喧騒から離れ、自然の中で深呼吸できる場所を目指して2018年に生まれました。
+        店内には地元の木材を使ったインテリアが並び、窓から差し込む光が一日を通して変化します。
+      </p>
+      <p class="concept__text">
+        コーヒー豆は農家と直接取引し、収穫から数ヶ月以内のフレッシュな豆だけを使用。
+        焙煎は毎週少量ずつ行い、常に最高の状態でお届けします。
+      </p>
+    </div>
+  </section>
+
+  <!-- Access Section -->
+  <section class="access" id="access">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-header__label">Access</p>
+        <h2 class="section-header__title">お店へのアクセス</h2>
+      </div>
+      <div class="access__inner">
+        <div class="access__map">
+          <div class="access__map-placeholder">
+            <div class="access__map-pin">
+              <svg width="40" height="50" viewBox="0 0 40 50" fill="none">
+                <path d="M20 0C8.95 0 0 8.95 0 20C0 35 20 50 20 50C20 50 40 35 40 20C40 8.95 31.05 0 20 0Z" fill="#5a4a3a"/>
+                <circle cx="20" cy="20" r="8" fill="#f5f0e8"/>
+              </svg>
+            </div>
+            <p class="access__map-note">※ 地図は実際の場所を示していません</p>
+          </div>
+        </div>
+        <div class="access__info">
+          <div class="access__info-block">
+            <h3 class="access__info-label">住所</h3>
+            <p class="access__info-text">〒150-0001<br>東京都渋谷区神宮前 3-14-8<br>MORIビル 1F</p>
+          </div>
+          <div class="access__info-block">
+            <h3 class="access__info-label">営業時間</h3>
+            <table class="access__hours">
+              <tr><td>月〜金</td><td>8:00 – 20:00</td></tr>
+              <tr><td>土・日・祝</td><td>9:00 – 21:00</td></tr>
+              <tr><td>定休日</td><td>毎週火曜日</td></tr>
+            </table>
+          </div>
+          <div class="access__info-block">
+            <h3 class="access__info-label">アクセス</h3>
+            <p class="access__info-text">東京メトロ 表参道駅 A2出口より徒歩5分<br>JR 渋谷駅 宮益坂口より徒歩12分</p>
+          </div>
+          <div class="access__info-block">
+            <h3 class="access__info-label">お問い合わせ</h3>
+            <p class="access__info-text">
+              Tel: 03-xxxx-xxxx<br>
+              <a href="mailto:info@cafemori.jp" class="access__link">info@cafemori.jp</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__logo">CAFÉ MORI</p>
+      <p class="footer__copy">&copy; 2024 CAFÉ MORI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
